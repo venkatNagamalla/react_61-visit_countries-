@@ -22,7 +22,7 @@ const CountriesContainer = props => {
   }
 
   const removeCountry = countryId => {
-    console.log(countryId)
+    getCountryId(countryId)
   }
 
   const renderCountriesList = () => (
@@ -37,21 +37,34 @@ const CountriesContainer = props => {
     </ul>
   )
 
-  const renderVisitedCountries = () => (
+  const renderCountries = () => (
     <ul className="visited-countries-container">
       {countriesList.map(
         eachCountry =>
           eachCountry.isVisited && (
-            <li>
-              <CountryFlagItem
-                key={eachCountry.id}
-                countryDetails={eachCountry}
-              />
-            </li>
+            <CountryFlagItem
+              key={eachCountry.id}
+              countryDetails={eachCountry}
+              removeCountry={removeCountry}
+            />
           ),
       )}
     </ul>
   )
+
+  const renderVisitedCountries = () => {
+    const updatedList = countriesList.filter(
+      eachCountry => eachCountry.isVisited === true,
+    )
+
+    return updatedList.length === 0 ? (
+      <div className="mess-container">
+        <p className="mess">No Countries Visited Yet!</p>
+      </div>
+    ) : (
+      renderCountries()
+    )
+  }
 
   return (
     <div className="bg-container">

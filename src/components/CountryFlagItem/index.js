@@ -1,14 +1,18 @@
 import './index.css'
 
 const CountryFlagItem = props => {
-  const {countryDetails} = props
-  const {id, imageUrl, name, isVisited} = countryDetails
+  const {countryDetails, removeCountry} = props
+  const {id, imageUrl, name} = countryDetails
   return (
     <li className="country-img-container">
-      <img className="country-img" src={imageUrl} alt="dd" />
+      <img className="country-img" src={imageUrl} alt="thumbnail" />
       <div className="name-btn-container">
         <p className="name">{name}</p>
-        <button className="remove-btn" type="button">
+        <button
+          onClick={() => removeCountry(id)}
+          className="remove-btn"
+          type="button"
+        >
           Remove
         </button>
       </div>

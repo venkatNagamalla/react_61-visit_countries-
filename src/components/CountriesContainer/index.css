@@ -39,3 +39,15 @@
     flex-wrap: wrap;
   }
 }
+
+.mess-container {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mess {
+  color: #ffffff;
+  font-size: 28px;
+}
