@@ -1,0 +1,30 @@
+.list {
+  border-top: 2px solid #334155;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px 12px 18px;
+  height: 50px;
+}
+
+.name {
+  color: #f1f5f9;
+  font-size: 14px;
+}
+
+.visited-text {
+  color: #cbd5e1ca;
+  font-size: 13px;
+  margin-right: 12px;
+}
+
+.visit-btn {
+  background-color: #3b82f6;
+  color: #ffffff;
+  height: 30px;
+  width: 60px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
